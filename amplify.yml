@@ -1,0 +1,21 @@
+version: 1
+applications:
+  - appRoot: apps/web
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - cd ../..
+            - npm install
+        build:
+          commands:
+            - cd ../..
+            - npm run build --workspace @poc/web
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**
+          - apps/web/.next/cache/**

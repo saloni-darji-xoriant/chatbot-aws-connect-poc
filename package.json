@@ -1,0 +1,10 @@
+{
+  "name": "chat-microfrontend-poc",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "npm run dev --workspace @poc/web",
+    "build": "npm run build --workspace @poc/web",
+    "start": "npm run start --workspace @poc/web"
+  }
+}
